@@ -11,6 +11,10 @@ body{
     text-align:center;
 }
 
+.starter1{
+  background-image: url('openbg.png');
+}
+
 .styled-button {
   padding: 10px 20px;
   background-color: #4CAF50; /* Green */
@@ -18,8 +22,69 @@ body{
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size:175%;
 }
 
 .styled-button:hover {
   background-color: #45a049; /* Darker green on hover */
 }
+
+#title1{
+  font-size:250%;
+  font-weight: normal;
+}
+
+#title2{
+  font-size:350%;
+  font-weight: normal;
+}
+
+#title3{
+  font-size:150%;
+  font-weight: normal;
+}
+
+
+
+
+
+
+ /* Flexbox container */
+ .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* Center the content vertically */
+    gap: 20px;  /* Add space between left and right side */
+  }
+
+  /* Left side (Bullet Points) */
+  .bullet-points {
+    flex: 1;
+    list-style-type: disc;
+  }
+
+  /* Right side (Images) */
+  .image-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .image-side img {
+    width: 100%; /* Make the images responsive */
+    max-width: 300px; /* Limit max width */
+    height: auto;
+    border-radius: 8px;
+  }
+
+  /* Make the layout responsive on smaller screens */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+    .bullet-points, .image-side {
+      flex: none; /* Reset flex when in column layout */
+    }
+  }
