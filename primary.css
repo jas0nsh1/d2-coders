@@ -1,0 +1,25 @@
+#appLovinIcon{
+  display: block;
+  max-width:100px;
+}
+
+body{
+    /* background-color:yellow; */
+}
+
+.starter{
+    text-align:center;
+}
+
+.styled-button {
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.styled-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
