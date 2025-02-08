@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .color-box {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin: 10px;
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Upload Company Logo</h1>
+    
+    <form action="/analyze" method="post" enctype="multipart/form-data">
+        <!-- Company Logo Upload -->
+        <label for="logo">Company Logo:</label>
+        <input type="file" name="logo" id="logo" required>
+        <br><br>
+
+        <!-- Company Advertisement Upload -->
+        <label for="advertisement">Company Advertisement:</label>
+        <input type="file" name="advertisement" id="advertisement" required>
+        <br><br>
+
+        <button type="submit">Done</button>
+    </form>
+</body>
+
+</html>
