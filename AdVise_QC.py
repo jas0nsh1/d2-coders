@@ -148,19 +148,15 @@ def quantum_normalize(scores):
     optimizer = SPSA(maxiter=100)
     
     for metric, score in scores.items():
-        # ✅ Define a unique cost function per metric
-        cost_operator = SparsePauliOp.from_list([("Z", score / 100)])  # 🔹 Fix: Ensure a valid single-qubit Pauli operator
+        cost_operator = SparsePauliOp.from_list([("Z", score / 100)])
 
-        # ✅ Define a new ansatz per metric
         ansatz = TwoLocal(rotation_blocks="ry", entanglement_blocks="cz")
 
-        # ✅ Optimize using VQE per metric
         vqe = VQE(estimator, ansatz, optimizer=optimizer)
         result = vqe.compute_minimum_eigenvalue(cost_operator)
         
-        # ✅ Rescale each score uniquely to the 0-100 range
         optimal_score = abs(result.eigenvalue.real) * 10
-        optimal_score = min(100, max(0, optimal_score))  # Clamp values between 0 and 100
+        optimal_score = min(100, max(0, optimal_score))
 
         normalized_scores[metric] = round(optimal_score, 2)
 
