@@ -8,14 +8,29 @@
     <link rel = "stylesheet" type = "text/css" href = "primary.css">
 
     <style>
+        body{
+            background-image: url('images/openbg.png');
+            background-size: cover; 
+            background-position: center center; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed;
+            height: 100vh; 
+            width: 100vw;
+            margin: 0; 
+        }
         /* Style for the form container */
         .form-container {
+            position: absolute;
+            top: 75%; /* Center text vertically */
+            left: 50%; /* Center text horizontally */
+            transform: translate(-50%, -50%); /* Adjust for exact centering */
+
             width: 50%;
             padding: 20px;
             border-radius: 10px;
             border: 2px solid #ccc;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin: 50px auto;
+            margin: 0px auto;
             background-color: #f9f9f9;
         }
 
@@ -44,16 +59,17 @@
             padding: 10px;
             border-radius: 10px;
             border: none;
-            background-color: #4CAF50;
+            background-color: #34b4e6;
             color: white;
             font-size: 16px;
             cursor: pointer;
         }
+        
 
         
 
         .submit-btn:hover {
-            background-color: #45a049;
+            background-color: #3eaddf;
         }
 
         .add-file-btn {
@@ -128,8 +144,8 @@
 
 
 
-
-    <div class="form-container">
+    <!-- <div class="starter1"> -->
+      <div class="form-container">
         <h2>Upload File</h2>
         <form action="/submit" method="POST" enctype="multipart/form-data">
             <!-- <label for="file-upload">Choose a file:</label>
@@ -161,9 +177,10 @@
             <label for="terms">I agree to the terms and conditions:</label>
             <input type="checkbox" id="terms" name="terms" value="accepted">
             <br><br>
-            <button type="submit" class="submit-btn">Submit</button>
+            <!-- <button type="submit" class="submit-btn">Submit</button> -->
+            <a href="dropmedia.html" class="submit-btn">Submit</a>
         </form>
-    </div>
-
+      </div>
+    <!-- </div> -->
 </body>
 </html>
